@@ -8,17 +8,17 @@ excerpt:
 enterprise: true
 ---
 
-You can use the Mesos DNS API to discover the IP addresses and ports of other applications.
+用户可以通过 Mesos DNS API 来查询应用的IP和端口号。
 
-# Routes
+# 路径
 
-Access to the Mesos DNS API is proxied through the Admin Router on each node using the following route:
+Mesos DNS API 的访问路径通过 Admin Router 代理进行转发，访问路径如下：
 
 ```bash
 curl -H "Authorization: token=<auth-token>" http://<public-master-ip>/mesos_dns/v1/
 ```
 
-Access to the Mesos DNS API of the agent nodes is also proxied through the master nodes:
+Agent 节点的 Mesos DNS 查询也是通过 master节点上的代理进行转发。
 
 ```bash
 curl -H "Authorization: token=<auth-token>" http://<public-master-ip>/system/v1/agent/{agent_id}/mesos_dns/v1/
